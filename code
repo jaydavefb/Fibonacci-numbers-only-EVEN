@@ -1,0 +1,49 @@
+//c#.....................
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+
+using System.Linq;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
+
+namespace Project_Euler_14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < t; i++)
+            {
+                long n=Convert.ToInt64(Console.ReadLine());
+                long a = 1;
+                long b = 2;
+                long c = 0;
+                long sum = 2;
+                long k = 1;
+                while ((a+b) < n)
+                {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                    //Console.Write(c+"\t");
+                    if (k % 3 == 0)
+                    {
+                        sum += c;
+                    }
+                    k++;
+                }
+                Console.WriteLine(sum);
+            }
+            
+        }
+    }
+}
